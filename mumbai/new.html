@@ -32,7 +32,7 @@ var CONTRACT_ADDRESS = location.hash.slice(1).split("=")[1]
 var template = Handlebars.compile(document.querySelector("#template").innerHTML)
 var stream = new Moneypipe.stream({
   web3: new Web3(window.ethereum),
-  network: "rinkeby"
+  network: "mumbai"
 })
 var chart;
 var members = []

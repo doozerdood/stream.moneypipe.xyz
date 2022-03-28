@@ -33,7 +33,7 @@ location.hash.slice(1).split("&").forEach((token) => {
 var web3 = new Web3(window.ethereum);
 var stream = new Moneypipe.stream({
   web3: new Web3(window.ethereum),
-  network: "rinkeby"
+  network: "mumbai"
 })
 var template = Handlebars.compile(document.querySelector("#template").innerHTML)
 var chart;

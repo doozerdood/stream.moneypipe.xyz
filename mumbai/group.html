@@ -1,28 +1,32 @@
-<html>
+<html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="moneypipe stream" />
 <meta name="twitter:description" content="Create a group that splits incoming money to members in realtime" />
 <meta name="twitter:image" content="https://stream.moneypipe.xyz/stream_poster.png" />
-<meta property="og:url" content="https://stream.moneypipe.xyz/rinkeby" />
+<meta property="og:url" content="https://doozerstream.com/mumbai" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="moneypipe stream" />
 <meta property="og:description" content="Create a group that splits incoming money to members in realtime" />
 <meta property="og:image" content="https://stream.moneypipe.xyz/stream_poster.png" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@3.0.0/dist/web3.min.js"></script>
+<link href="../js/all.min.css" rel="stylesheet">
+<script src="../js/web3.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../node_modules/chart.js/dist/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 <script src="https://unpkg.com/qrcode@1.5.0/build/qrcode.js"></script>
-<script src="https://unpkg.com/moneypipe/dist/moneypipe.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.6.1/randomColor.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-<link href="/style.css" rel="stylesheet">
+<script src="../js/moneypipe.js"></script>
+<script src="../js/randomColor.min.js"></script>
+<script src="../js/handlebars.min.js"></script>
+<link href="../style.css" rel="stylesheet">
 <script id="template" type="text/x-handlebars-template">
-  <input class='account' type='text' placeholder='address'>
-  <input class='value' type='number' placeholder='split portion (1, 10, 100, ...)'>
+  <label>
+    <input class='account' type='text' placeholder='address'>
+  </label>
+  <label>
+    <input class='value' type='number' placeholder='split portion (1, 10, 100, ...)'>
+  </label>
 </script>
 <script>
 let Params = {}
@@ -33,7 +37,9 @@ location.hash.slice(1).split("&").forEach((token) => {
 var web3 = new Web3(window.ethereum);
 var stream = new Moneypipe.stream({
   web3: new Web3(window.ethereum),
-  network: "mumbai"
+  network: "Mumbai Testnet",
+  chainID: "80001",
+  url: "https://wandering-long-hill.matic-testnet.quiknode.pro/ddde050ca0df19b2adea277ebf74f910eeccabdf"
 })
 var template = Handlebars.compile(document.querySelector("#template").innerHTML)
 var chart;
@@ -136,6 +142,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   })
 })
 </script>
+  <title></title>
 </head>
 <body>
 <nav>
@@ -144,7 +151,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   </div>
   <div class='subtitle'>create a group that splits incoming money to members in realtime</div>
   <div>
-    <a class='btn' href="../../about">How does it work?</a>
+    <a class='btn' href="/stream.moneypipe.xyz/about.html">How does it work?</a>
     <a class='btn' href='https://stream.moneypipe.xyz/mumbai/group#address=0x2964fD27D4b8827d226DAb288Dd373CbE9449970'>Demo</a>
   </div>
 </nav>
@@ -153,7 +160,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   <div id='addr'></div>
   <div id='chart'></div>
   <form class='field2'>
-    <input class='value' type='text' placeholder="enter in eth (0.1, 0.02, etc.)">
+    <label>
+      <input class='value' type='text' placeholder="enter in eth (0.1, 0.02, etc.)">
+    </label>
     <input type='submit' value='send to group' class='btn send'>
   </form>
   <div class='options'>

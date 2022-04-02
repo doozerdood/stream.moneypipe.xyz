@@ -1,0 +1,19 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Royalty Stream Splitter",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doozerdood/stream.moneypipe.xyz.git"
+  },
+  "author": "Michael Stanley (DoozerNFT)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doozerdood/stream.moneypipe.xyz/issues"
+  },
+  "homepage": "https://github.com/doozerdood/stream.moneypipe.xyz#readme"
+}

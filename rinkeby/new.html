@@ -5,20 +5,20 @@
 <meta name="twitter:title" content="moneypipe stream" />
 <meta name="twitter:description" content="Create a group that splits incoming money to members in realtime" />
 <meta name="twitter:image" content="https://stream.moneypipe.xyz/stream_poster.png" />
-<meta property="og:url" content="https://stream.moneypipe.xyz/rinkeby" />
+<meta property="og:url" content="https://doozerstream.com/rinkeby" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="moneypipe stream" />
 <meta property="og:description" content="Create a group that splits incoming money to members in realtime" />
 <meta property="og:image" content="https://stream.moneypipe.xyz/stream_poster.png" />
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@3.0.0/dist/web3.min.js"></script>
-<script src="https://unpkg.com/moneypipe/dist/moneypipe.js"></script>
+<script src="../js/web3.min.js"></script>
+<script src="../js/moneypipe.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.6.1/randomColor.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
-<link href="/style.css" rel="stylesheet">
+<script src="../js/randomColor.min.js"></script>
+<script src="../js/handlebars.min.js"></script>
+<link href="../js/all.min.css" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
 <script id="template" type="text/x-handlebars-template">
 {{#each accounts}}
   <tr class='field'>
@@ -32,7 +32,7 @@ var CONTRACT_ADDRESS = location.hash.slice(1).split("=")[1]
 var template = Handlebars.compile(document.querySelector("#template").innerHTML)
 var stream = new Moneypipe.stream({
   web3: new Web3(window.ethereum),
-  network: "mumbai"
+  network: "rinkeby"
 })
 var chart;
 var members = []

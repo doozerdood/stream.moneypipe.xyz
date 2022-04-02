@@ -5,20 +5,21 @@
 <meta name="twitter:title" content="moneypipe stream" />
 <meta name="twitter:description" content="Create a group that splits incoming money to members in realtime" />
 <meta name="twitter:image" content="https://stream.moneypipe.xyz/stream_poster.png" />
-<meta property="og:url" content="https://stream.moneypipe.xyz/rinkeby" />
+<meta property="og:url" content="https://doozerstream.com/rinkeby" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="moneypipe stream" />
 <meta property="og:description" content="Create a group that splits incoming money to members in realtime" />
 <meta property="og:image" content="https://stream.moneypipe.xyz/stream_poster.png" />
-<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@3.0.0/dist/web3.min.js"></script>
-<script src="https://unpkg.com/moneypipe/dist/moneypipe.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
-<link href="/style.css" rel="stylesheet">
+<script src="../js/web3.min.js"></script>
+<script src="../js/moneypipe.js"></script>
+<link href="../js/all.min.css" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
 <script>
 var stream = new Moneypipe.stream({
   web3: new Web3(window.ethereum),
   network: "rinkeby"
 })
+
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     let groups = await stream.groups()

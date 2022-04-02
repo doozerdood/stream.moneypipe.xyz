@@ -1,29 +1,31 @@
-<html>
+<html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="moneypipe stream" />
 <meta name="twitter:description" content="Create a group that splits incoming money to members in realtime" />
 <meta name="twitter:image" content="https://stream.moneypipe.xyz/stream_poster.png" />
-<meta property="og:url" content="https://stream.moneypipe.xyz/mumbai" />
+<meta property="og:url" content="https://doozerstream.com/mumbai" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="moneypipe stream" />
+<meta property="og:title" content="doozerstream" />
 <meta property="og:description" content="Create a group that splits incoming money to members in realtime" />
 <meta property="og:image" content="https://stream.moneypipe.xyz/stream_poster.png" />
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@3.0.0/dist/web3.min.js"></script>
-<script src="https://unpkg.com/moneypipe/dist/moneypipe.js"></script>
+<script src="../js/web3.min.js"></script>
+<script src="../js/moneypipe.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.6.1/randomColor.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
-<link href="/style.css" rel="stylesheet">
+<script src="../js/randomColor.min.js"></script>
+<script src="../js/handlebars.min.js"></script>
+<link href="../js/all.min.css" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
 <script id="template" type="text/x-handlebars-template">
 {{#each accounts}}
   <tr class='field'>
     <td class='account'>{{account}}</td>
-    <td><input value={{val}} class='value' type='number' placeholder='split portion (1, 10, 100, ...)'></td>
+    <td><label>
+      <input value={{val}} class='value' type='number' placeholder='split portion (1, 10, 100, ...)'>
+    </label></td>
   </tr>
 {{/each}}
 </script>
@@ -32,7 +34,9 @@ var CONTRACT_ADDRESS = location.hash.slice(1).split("=")[1]
 var template = Handlebars.compile(document.querySelector("#template").innerHTML)
 var stream = new Moneypipe.stream({
   web3: new Web3(window.ethereum),
-  network: "mumbai"
+  network: "Mumbai Testnet",
+  chainID: "80001",
+  url: "https://wandering-long-hill.matic-testnet.quiknode.pro/ddde050ca0df19b2adea277ebf74f910eeccabdf"
 })
 var chart;
 var members = []
@@ -133,6 +137,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 })
 </script>
+  <title></title>
 </head>
 <body>
 <nav>

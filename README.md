@@ -1,3 +1,2 @@
-# pipe.moneygroup.app
+DoozerNFT Royalty Stream Splitter
 
-see https://github.com/moneygroup/pipe
